@@ -1,0 +1,374 @@
+/* Cores: tinta azul-marinho + âmbar (café do Java) */
+:root {
+    --fundo: #0f1a2b;
+    --fundo-2: #15233a;
+    --linha: #263752;
+    --texto: #eef1f6;
+    --texto-suave: #9aa8bd;
+    --ambar: #f2a93b;
+    --ambar-escuro: #c9831b;
+    --verde: #7fd1ae;
+    --codigo: #0a1220;
+
+    --fonte-display: "Big Shoulders Display", Impact, sans-serif;
+    --fonte-texto: "Instrument Sans", system-ui, sans-serif;
+    --fonte-codigo: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* O site é escuro por padrão. Tema claro só com <html data-theme="light"> */
+:root[data-theme="light"] {
+    --fundo: #f4f1ea;
+    --fundo-2: #ebe6db;
+    --linha: #d5cdbd;
+    --texto: #142033;
+    --texto-suave: #5a6577;
+    --ambar: #b8700f;
+    --ambar-escuro: #8f560a;
+    --verde: #1f7a57;
+    --codigo: #142033;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: var(--fonte-texto);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ambar); outline-offset: 3px; border-radius: 4px; }
+
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+
+/* Topo */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 0;
+    gap: 16px;
+    font-size: 0.95rem;
+}
+.topo .status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--texto-suave);
+    font-family: var(--fonte-codigo);
+    font-size: 0.8rem;
+}
+.topo .status::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--verde);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--verde) 25%, transparent);
+}
+.topo nav { display: flex; gap: 24px; }
+.topo nav a { text-decoration: none; color: var(--texto-suave); }
+.topo nav a:hover { color: var(--texto); }
+
+/* Nome gigante: o elemento marcante da página */
+.nome {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.82;
+    letter-spacing: -0.01em;
+    margin: 24px 0 0;
+    font-size: clamp(4.5rem, 19vw, 15.5rem);
+}
+.nome span { display: block; }
+.nome .sobrenome {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ambar);
+}
+
+.chamada {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: end;
+    padding: 32px 0 56px;
+    border-bottom: 1px solid var(--linha);
+}
+.chamada p {
+    margin: 0;
+    font-size: clamp(1.15rem, 2.2vw, 1.4rem);
+    max-width: 38ch;
+    line-height: 1.45;
+}
+.chamada p strong { color: var(--ambar); font-weight: 600; }
+
+.botoes { display: flex; gap: 12px; flex-wrap: wrap; }
+.botao {
+    display: inline-block;
+    padding: 13px 22px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--ambar);
+    transition: background 0.15s, color 0.15s;
+}
+.botao.cheio { background: var(--ambar); color: #1a1205; }
+.botao.cheio:hover { background: var(--ambar-escuro); border-color: var(--ambar-escuro); }
+.botao.vazado { color: var(--ambar); }
+.botao.vazado:hover { background: var(--ambar); color: #1a1205; }
+
+/* Explorador de API: a interação principal */
+.explorador { padding: 72px 0; }
+.explorador h2, section h2 {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(2.5rem, 6vw, 4.25rem);
+    line-height: 0.95;
+    margin: 0 0 12px;
+}
+.explorador .intro, section .intro {
+    color: var(--texto-suave);
+    max-width: 56ch;
+    margin: 0 0 32px;
+}
+
+.console {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    background: var(--codigo);
+    border: 1px solid var(--linha);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: var(--fonte-codigo);
+    font-size: 0.9rem;
+    color: #dfe6ee;
+}
+.console .rotas {
+    list-style: none;
+    margin: 0;
+    padding: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.console .rotas button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: 0;
+    color: #b7c2d3;
+    font: inherit;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+}
+.console .rotas button .verbo { color: #7fd1ae; font-weight: 500; }
+.console .rotas button:hover { background: rgba(255, 255, 255, 0.05); color: #fff; }
+.console .rotas button[aria-pressed="true"] { background: rgba(242, 169, 59, 0.14); color: #fff; }
+
+.console .resposta { display: flex; flex-direction: column; min-height: 360px; }
+.console .barra {
+    display: flex;
+    gap: 12px;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #8b97a8;
+    flex-wrap: wrap;
+}
+.console .barra .ok { color: #7fd1ae; }
+.console .barra .tempo { margin-left: auto; }
+.console pre {
+    margin: 0;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.7;
+    flex: 1;
+}
+.console .k { color: #7fd1ae; }
+.console .s { color: #f2c27a; }
+.console .n { color: #9ec3ff; }
+
+/* Faixa rolando com as tecnologias */
+.faixa {
+    border-top: 1px solid var(--linha);
+    border-bottom: 1px solid var(--linha);
+    overflow: hidden;
+    padding: 18px 0;
+    background: var(--fundo-2);
+}
+.faixa .trilho {
+    display: flex;
+    gap: 48px;
+    width: max-content;
+    animation: rolar 40s linear infinite;
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    color: var(--texto-suave);
+}
+.faixa .trilho span::after { content: "/"; margin-left: 48px; color: var(--ambar); }
+.faixa .trilho span {
+    display: flex;
+    align-items: center;
+    gap: 16px;            /* espaço entre o logo e o nome */
+}
+.faixa .trilho img {
+    height: 1.75rem;      /* mesma altura do texto */
+    width: auto;
+}
+.faixa .trilho img.logo-claro {
+    filter: invert(1);    /* deixa o logo preto do GitHub branco */
+}
+@keyframes rolar { to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+    .faixa .trilho { animation: none; flex-wrap: wrap; width: auto; padding: 0 16px; }
+    html { scroll-behavior: auto; }
+}
+
+/* Seções */
+section { padding: 88px 0; }
+
+/* Projetos em destaque */
+.projeto {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+    margin-bottom: 24px;
+    background: var(--fundo-2);
+    border: 1px solid var(--linha);
+    border-radius: 20px;
+}
+.projeto .cabecalho {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+}
+.selo {
+    font-family: var(--fonte-codigo);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--verde);
+    color: var(--verde);
+}
+.selo.evoluindo { border-color: var(--ambar); color: var(--ambar); }
+.selo.academico { border-color: var(--texto-suave); color: var(--texto-suave); }
+.projeto h3 {
+    font-family: var(--fonte-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 0.95;
+    margin: 0 0 14px;
+}
+.projeto p { margin: 0 0 20px; color: var(--texto-suave); max-width: 46ch; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 24px; }
+.tags li {
+    font-size: 0.825rem;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--fundo);
+    border: 1px solid var(--linha);
+}
+.projeto .link-codigo { font-weight: 600; color: var(--ambar); text-underline-offset: 4px; }
+
+/* Trecho de código que representa cada projeto */
+.trecho {
+    background: var(--codigo);
+    color: #dfe6ee;
+    border-radius: 14px;
+    padding: 20px;
+    font-family: var(--fonte-codigo);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    overflow-x: auto;
+    margin: 0;
+    align-self: center;
+}
+.trecho .a { color: #f2c27a; }
+.trecho .c { color: #6f7d92; }
+.trecho .t { color: #7fd1ae; }
+
+/* Sobre */
+.sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    border-top: 1px solid var(--linha);
+}
+.sobre .texto p { margin: 0 0 16px; max-width: 54ch; }
+.grupo h3 {
+    font-family: var(--fonte-codigo);
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: var(--ambar);
+    margin: 0 0 10px;
+}
+.grupo ul { list-style: none; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+.grupo li { padding: 6px 14px; border: 1px solid var(--linha); border-radius: 999px; font-size: 0.925rem; }
+
+/* Linha do tempo em tabela */
+.tempo-tabela { width: 100%; border-collapse: collapse; }
+.tempo-tabela th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--texto-suave);
+    font-size: 0.875rem;
+    padding: 0 12px 14px 0;
+    border-bottom: 1px solid var(--linha);
+}
+.tempo-tabela td { padding: 20px 12px 20px 0; border-bottom: 1px solid var(--linha); vertical-align: top; }
+.tempo-tabela td:first-child { font-family: var(--fonte-codigo); color: var(--ambar); width: 140px; }
+.tempo-tabela td strong { display: block; font-size: 1.1rem; }
+.tempo-tabela td span { color: var(--texto-suave); font-size: 0.95rem; }
+
+/* Contato */
+.contato { border-top: 1px solid var(--linha); text-align: left; }
+.contato h2 { font-size: clamp(3rem, 10vw, 7.5rem); max-width: 12ch; }
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding: 28px 0 44px;
+    border-top: 1px solid var(--linha);
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+}
+footer a { color: var(--texto-suave); }
+
+/* Celular e tablet */
+@media (max-width: 900px) {
+    .chamada { grid-template-columns: 1fr; }
+    .console { grid-template-columns: 1fr; }
+    .console .rotas { border-right: 0; border-bottom: 1px solid rgba(255, 255, 255, 0.08); flex-direction: row; overflow-x: auto; }
+    .console .rotas button { white-space: nowrap; }
+    .projeto { grid-template-columns: 1fr; padding: 24px; }
+    .sobre { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 560px) {
+    .topo nav { display: none; }
+    .nome .sobrenome { -webkit-text-stroke-width: 1.5px; }
+    .tempo-tabela td:first-child { width: 90px; }
+    .tempo-tabela th:last-child, .tempo-tabela td:last-child { display: none; }
+    section { padding: 64px 0; }
+}

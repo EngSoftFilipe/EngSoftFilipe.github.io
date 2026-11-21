@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Filipe Gabriel | Back-end Java</title>
+  <meta name="description" content="Portfólio de Filipe Gabriel, desenvolvedor back-end Java com Spring Boot, JPA, PostgreSQL e Docker." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./portifolio.css">
+  <link rel="icon" href="./favicon/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./favicon/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="./favicon/apple-touch-icon.png">
+
+</head>
+<body>
+  <div class="container">
+    <header class="topo">
+      <span class="status">estudando Spring Data JPA agora</span>
+      <nav aria-label="Seções">
+        <a href="#api">API</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1 class="nome" aria-label="Filipe Gabriel">
+        <span>Filipe</span>
+        <span class="sobrenome">Gabriel</span>
+      </h1>
+
+      <div class="chamada">
+        <p>
+          Desenvolvedor <strong>back-end Java</strong>. Construo APIs REST com Spring Boot,
+          do controller ao banco, com testes e banco versionado.
+        </p>
+        <div class="botoes">
+          <a class="botao cheio" href="#projetos">Ver projetos</a>
+          <a class="botao vazado" href="#contato">Falar comigo</a>
+        </div>
+      </div>
+
+      <!-- Explorador: cada rota mostra uma parte do portfólio em JSON -->
+      <div class="explorador" id="api">
+        <h2>Me conheça pela API</h2>
+        <p class="intro">Escolha uma rota para ver a resposta.</p>
+
+        <div class="console">
+          <ul class="rotas" aria-label="Rotas da API">
+            <li><button type="button" data-rota="perfil" aria-pressed="true"><span class="verbo">GET</span>/perfil</button></li>
+            <li><button type="button" data-rota="stack" aria-pressed="false"><span class="verbo">GET</span>/stack</button></li>
+            <li><button type="button" data-rota="projetos" aria-pressed="false"><span class="verbo">GET</span>/projetos</button></li>
+            <li><button type="button" data-rota="estudos" aria-pressed="false"><span class="verbo">GET</span>/estudos</button></li>
+            <li><button type="button" data-rota="contato" aria-pressed="false"><span class="verbo">GET</span>/contato</button></li>
+          </ul>
+          <div class="resposta">
+            <div class="barra">
+              <span id="rota-atual">GET /api/filipe/perfil</span>
+              <span class="ok">200 OK</span>
+              <span class="tempo" id="tempo">12 ms</span>
+            </div>
+            <pre id="saida" aria-live="polite"></pre>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="faixa" aria-hidden="true">
+    <div class="trilho">
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/java/java-original.svg" alt="" width="32" height="32">Java</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/spring/spring-original.svg" alt="" width="32" height="32">Spring Boot</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/html5/html5-original.svg" alt="" width="32" height="32">HTML</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/css3/css3-original.svg" alt="" width="32" height="32">CSS</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/javascript/javascript-original.svg" alt="" width="32" height="32">JavaScript</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/spring/spring-original.svg" alt="" width="32" height="32">Spring Data JPA</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/hibernate/hibernate-original.svg" alt="" width="32" height="32">Hibernate</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/postgresql/postgresql-original.svg" alt="" width="32" height="32">PostgreSQL</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/mysql/mysql-original.svg" alt="" width="32" height="32">MySQL</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/docker/docker-original.svg" alt="" width="32" height="32">Docker</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/flyway/flyway-original.svg" alt="" width="32" height="32">Flyway</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/junit/junit-original.svg" alt="" width="32" height="32">JUnit</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/maven/maven-original.svg" alt="" width="32" height="32">Maven</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/git/git-original.svg" alt="" width="32" height="32">Git</span>
+    <span><img class="logo-claro" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/github/github-original.svg" alt="" width="32" height="32">GitHub</span>
+
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/java/java-original.svg" alt="" width="32" height="32">Java</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/spring/spring-original.svg" alt="" width="32" height="32">Spring Boot</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/html5/html5-original.svg" alt="" width="32" height="32">HTML</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/css3/css3-original.svg" alt="" width="32" height="32">CSS</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/javascript/javascript-original.svg" alt="" width="32" height="32">JavaScript</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/spring/spring-original.svg" alt="" width="32" height="32">Spring Data JPA</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/hibernate/hibernate-original.svg" alt="" width="32" height="32">Hibernate</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/postgresql/postgresql-original.svg" alt="" width="32" height="32">PostgreSQL</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/mysql/mysql-original.svg" alt="" width="32" height="32">MySQL</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/docker/docker-original.svg" alt="" width="32" height="32">Docker</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/flyway/flyway-original.svg" alt="" width="32" height="32">Flyway</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/junit/junit-original.svg" alt="" width="32" height="32">JUnit</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/maven/maven-original.svg" alt="" width="32" height="32">Maven</span>
+    <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/git/git-original.svg" alt="" width="32" height="32">Git</span>
+    <span><img class="logo-claro" src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.18.0/icons/github/github-original.svg" alt="" width="32" height="32">GitHub</span>
+  </div>
+</div>
+
+  <div class="container">
+    <!-- Projetos -->
+    <section id="projetos" aria-labelledby="titulo-projetos">
+      <h2 id="titulo-projetos">Projetos</h2>
+      <p class="intro">Todos com README, instruções para rodar e anotações das decisões que tomei.</p>
+
+      <article class="projeto">
+        <div>
+          <div class="cabecalho"><span class="selo evoluindo">Em evolução</span><span class="selo academico">Projeto acadêmico</span><span>API REST</span></div>
+          <h3>Products API</h3>
+          <p>API de produtos construída do zero, com CRUD completo, busca por nome, status HTTP corretos e testes de integração.</p>
+          <ul class="tags"><li>Java 21</li><li>Spring Boot 4</li><li>Spring Data JPA</li><li>H2</li><li>JUnit</li></ul>
+          <a class="link-codigo" href="https://github.com/EngSoftFilipe/products-api" target="_blank" rel="noopener noreferrer">Ver código no GitHub</a>
+        </div>
+        <pre class="trecho"><span class="a">@PostMapping</span>
+public ResponseEntity&lt;Product&gt; create(
+        <span class="a">@RequestBody</span> Product product) {
+    Product saved = service.save(product);
+    <span class="c">// 201 Created</span>
+    return ResponseEntity.status(<span class="t">HttpStatus.CREATED</span>)
+            .body(saved);
+}</pre>
+      </article>
+
+      <article class="projeto">
+        <div>
+          <div class="cabecalho"><span class="selo evoluindo">Em evolução</span><span class="selo academico">Projeto acadêmico</span><span>Persistência</span></div>
+          <h3>Livraria JPA</h3>
+          <p>Autores e livros com relacionamentos entre entidades, PostgreSQL em Docker, migrations com Flyway e testes de repository com rollback.</p>
+          <ul class="tags"><li>Spring Boot 4</li><li>PostgreSQL</li><li>Docker</li><li>Flyway</li><li>Hibernate</li></ul>
+          <a class="link-codigo" href="https://github.com/EngSoftFilipe/spring-data-jpa" target="_blank" rel="noopener noreferrer">Ver código no GitHub</a>
+        </div>
+        <pre class="trecho"><span class="a">@Entity</span>
+<span class="a">@Table</span>(name = <span class="t">"livro"</span>)
+public class Livro {
+
+    <span class="a">@ManyToOne</span>(fetch = <span class="t">FetchType.LAZY</span>)
+    <span class="a">@JoinColumn</span>(name = <span class="t">"id_autor"</span>)
+    private Autor autor;
+}</pre>
+      </article>
+
+      <article class="projeto">
+        <div>
+          <div class="cabecalho"><span class="selo">Concluído</span><span class="selo academico">Projeto acadêmico</span><span>Java puro</span></div>
+          <h3>Campo Minado</h3>
+          <p>Jogo no terminal com as regras separadas da interface, exceções personalizadas, Stream API e testes unitários.</p>
+          <ul class="tags"><li>Java 21</li><li>Maven</li><li>JUnit</li></ul>
+          <a class="link-codigo" href="https://github.com/EngSoftFilipe/campo-minado" target="_blank" rel="noopener noreferrer">Ver código no GitHub</a>
+        </div>
+        <pre class="trecho"><span class="a">@Test</span>
+void deveExplodirAoAbrirCampoMinado() {
+    campo.minar();
+    assertThrows(<span class="t">ExplosaoException.class</span>,
+            () -&gt; campo.abrir());
+}</pre>
+      </article>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="sobre" aria-labelledby="titulo-sobre">
+      <div class="texto">
+        <h2 id="titulo-sobre">Sobre</h2>
+        <p>
+          Sou de Aracaju e estudo Engenharia de Software. Meu foco é o back-end com Java:
+          entender o que o Spring faz por baixo, escolher o jeito certo de modelar o banco
+          e escrever código que outra pessoa consiga ler.
+        </p>
+        <p>
+          Registro tudo o que aprendo em anotações públicas no GitHub, com os padrões de
+          mercado e os erros que encontrei pelo caminho.
+        </p>
+      </div>
+      <div>
+        <div class="grupo">
+          <h3>back-end</h3>
+          <ul><li>Java</li><li>Spring Boot</li><li>Spring Data JPA</li><li>Hibernate</li><li>APIs REST</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>front-end</h3>
+          <ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>banco de dados</h3>
+          <ul><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Flyway</li></ul>
+        </div>
+        <div class="grupo">
+          <h3>ferramentas</h3>
+          <ul><li>Docker</li><li>Git e GitHub</li><li>Maven</li><li>JUnit</li><li>IntelliJ IDEA</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha do tempo -->
+    <section aria-labelledby="titulo-tempo">
+      <h2 id="titulo-tempo">Trajetória</h2>
+      <p class="intro">Da base em Java até o Spring.</p>
+      <table class="tempo-tabela">
+        <thead><tr><th scope="col">Quando</th><th scope="col">O quê</th><th scope="col">Onde</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>2025-2028</td>
+            <td><strong>Bacharelado em Engenharia de Software</strong><span>Em andamento</span></td>
+            <td>Estácio</td>
+          </tr>
+          <tr>
+            <td>2025-2026</td>
+            <td><strong>Java do zero ao profissional</strong><span>POO, Stream API, JUnit, JDBC, JPA</span></td>
+            <td>Udemy</td>
+          </tr>
+          <tr>
+            <td>Em andamento</td>
+            <td><strong>Spring Boot Expert</strong><span>Spring Boot, Spring Security, Spring Data JPA, JWT, OAuth, Docker, AWS</span></td>
+            <td>Udemy</td>
+          </tr>
+          <tr>
+            <td>Em andamento</td>
+            <td><strong>JavaScript e TypeScript do básico ao avançado</strong><span>HTML, CSS, JS, TypeScript, DOM, Node, React</span></td>
+            <td>Udemy</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato" aria-labelledby="titulo-contato">
+      <h2 id="titulo-contato">Vamos conversar</h2>
+      <p class="intro">O jeito mais rápido é pelo LinkedIn. Todo o meu código está no GitHub.</p>
+      <div class="botoes">
+        <a class="botao cheio" href="https://www.linkedin.com/in/filipe-gabriel-8450a5294/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="botao vazado" href="https://github.com/EngSoftFilipe" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>Filipe Gabriel, 2026. Feito com HTML, CSS e JavaScript.</span>
+      <a href="#">Voltar ao topo</a>
+    </footer>
+  </div>
+
+  <script src="./portifolio.js"></script>
+</body>
+</html>
